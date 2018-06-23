@@ -1,0 +1,23 @@
+{
+  "name": "book_library_app_server",
+  "version": "1.0.0",
+  "description": "Server application for book_library_app",
+  "main": "server.js",
+  "repository": "https://github.com/UHanczar/book_library_app_server",
+  "author": "U. Hanchar",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "nodemon --exec babel-node server.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/node": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6",
+    "morgan": "^1.9.0"
+  }
+}
