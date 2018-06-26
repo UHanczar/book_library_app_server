@@ -32,7 +32,9 @@ router.post('/booklist', async (req, res, next) => {
       year: req.body.year,
       pages: req.body.pages,
       description: req.body.description,
-      created: Date.now()
+      created: Date.now(),
+      category: req.body.category,
+      categoryKeys: req.body.categoryKeys
     });
 
     await bookItem.save();

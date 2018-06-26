@@ -10,6 +10,8 @@ const BookItemSchema = new Schema({
   year: { type: String },
   pages: { type: String },
   description: { type: String },
+  category: { type: Array },
+  categoryKeys: { type: Array },
   created: { type: Date, default: Date.now }
 });
 
