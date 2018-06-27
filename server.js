@@ -7,6 +7,7 @@ import cors from 'cors';
 import config from './config/keys';
 import bookCategoriesRoutes from './routes/bookCategory';
 import bookList from './routes/bookList';
+import bookItem from './routes/bookItem';
 
 const app = express();
 
@@ -25,5 +26,6 @@ app.use(cors());
 
 app.use('/api', bookCategoriesRoutes);
 app.use('/api', bookList);
+app.use('/api', bookItem);
 
 app.listen(config.port, () => console.log(`Server runs on port ${config.port}`));
