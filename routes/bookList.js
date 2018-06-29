@@ -34,7 +34,8 @@ router.post('/booklist', async (req, res, next) => {
       description: req.body.description,
       created: Date.now(),
       category: req.body.category,
-      categoryKeys: req.body.categoryKeys
+      categoryKeys: req.body.categoryKeys,
+      rating: req.body.rating
     });
 
     await bookItem.save();

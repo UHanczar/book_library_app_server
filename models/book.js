@@ -12,7 +12,8 @@ const BookItemSchema = new Schema({
   description: { type: String },
   category: { type: Array },
   categoryKeys: { type: Array },
-  created: { type: Date, default: Date.now }
+  created: { type: Date, default: Date.now },
+  rating: { type: String, default: '0' }
 });
 
 export default mongoose.model('BookItem', BookItemSchema);
