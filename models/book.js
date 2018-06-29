@@ -13,7 +13,10 @@ const BookItemSchema = new Schema({
   category: { type: Array },
   categoryKeys: { type: Array },
   created: { type: Date, default: Date.now },
-  rating: { type: String, default: '0' }
+  rating: { type: String, default: '0' },
+  isAvailable: { type: Boolean, default: true },
+  currentReader: { type: String, default: null },
+  returnDate: { type: Date, default: null }
 });
 
 export default mongoose.model('BookItem', BookItemSchema);
