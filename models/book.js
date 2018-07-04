@@ -14,6 +14,11 @@ const BookItemSchema = new Schema({
   categoryKeys: { type: Array },
   created: { type: Date, default: Date.now },
   rating: { type: String, default: '0' },
+  ratingData: [{
+    userId: { type: String },
+    bookId: { type: String },
+    rating: { type: String }
+  }],
   isAvailable: { type: Boolean, default: true },
   currentReader: { type: String, default: null },
   returnDate: { type: Date, default: null }
