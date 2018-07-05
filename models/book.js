@@ -20,7 +20,7 @@ const BookItemSchema = new Schema({
     rating: { type: String }
   }],
   isAvailable: { type: Boolean, default: true },
-  currentReader: { type: String, default: null },
+  currentReader: { type: Schema.Types.ObjectId, ref: 'User', default: null},
   returnDate: { type: Date, default: null }
 });
 

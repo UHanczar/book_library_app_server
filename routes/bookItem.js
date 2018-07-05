@@ -7,7 +7,8 @@ const router = Router();
 
 router.get('/book_item/:id', async (req, res, next) => {
   try {
-    const book = await Book.findOne({ _id: req.params.id });
+    const book = await Book.findById({ _id: req.params.id })
+                  .populate('currentReader');
 
     res.json({
       success: true,
@@ -23,7 +24,7 @@ router.get('/book_item/:id', async (req, res, next) => {
 
 router.post('/book_item/rate', checkJwt, async (req, res, next) => {
   try {
-    const book = await Book.findOne({ _id: req.body.bookId });
+    const book = await Book.findById({ _id: req.body.bookId });
 
     if (book) {
       const existingVoice = book.ratingData.find(item => item.userId === req.body.userId);
@@ -43,7 +44,7 @@ router.post('/book_item/rate', checkJwt, async (req, res, next) => {
 
         res.json({
           success: true,
-          book
+          ratingData: book.ratingData
         });
       }
     } else {
