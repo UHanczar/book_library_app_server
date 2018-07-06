@@ -21,7 +21,7 @@ const BookItemSchema = new Schema({
   }],
   isAvailable: { type: Boolean, default: true },
   currentReader: { type: Schema.Types.ObjectId, ref: 'User', default: null},
-  returnDate: { type: Date, default: null }
+  returnDate: { type: Number, default: null }
 });
 
 export default mongoose.model('BookItem', BookItemSchema);

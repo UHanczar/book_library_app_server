@@ -15,7 +15,7 @@ router.get('/categories', async (req, res, next) => {
   } catch (error) {
     res.json({
       success: false,
-      erorrMessage: `Error fetching book categories: ${JSON.stringify(error)}`
+      message: `Error fetching book categories: ${JSON.stringify(error)}`
     });
   }
 });
@@ -34,7 +34,7 @@ router.post('/category', async (req, res, next) => {
 
     res.json({
       success: true,
-      message: 'Sucessfully created new category.'
+      message: 'Successfully created new category.'
     });
   } catch (error) {
     console.log('Error', error);

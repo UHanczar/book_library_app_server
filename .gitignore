@@ -63,3 +63,6 @@ typings/
 # config files
 config/dev.js
 config/prod.js
+
+# webstorm files
+.idea/

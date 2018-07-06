@@ -15,7 +15,7 @@ router.get('/booklist', async (req, res, next) => {
   } catch (error) {
     res.json({
       success: false,
-      erorrMessage: `Error fetching book list: ${JSON.stringify(error)}`
+      message: `Error fetching book list: ${JSON.stringify(error)}`
     });
   }
 });
@@ -43,7 +43,7 @@ router.post('/booklist', async (req, res, next) => {
 
     res.json({
       success: true,
-      message: 'Sucessfully created new book item.'
+      message: 'Successfully created new book item.'
     });
   } catch (error) {
     console.log('Error', error);

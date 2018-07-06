@@ -58,7 +58,7 @@ router.get('/checkuser', checkJwt, async (req, res, next) => {
     if (!user) {
       res.json({
         success: false,
-        message: 'There is some error in fenching data from database.'
+        message: 'There is some error in fetching data from database.'
       });
     } else {
       const userData = {
@@ -75,6 +75,45 @@ router.get('/checkuser', checkJwt, async (req, res, next) => {
         success: true,
         message: 'Sending user data',
         user: userData
+      });
+    }
+  } catch (error) {
+    res.json({
+      success: false,
+      message: `${JSON.stringify(error)}`
+    });
+  }
+});
+
+router.get('/userlist', async (req, res, next) => {
+  try {
+    const list = await User.find({});
+
+    if (!list) {
+      res.json({
+        success: false,
+        message: 'There is some error in fetching data from database.'
+      });
+    } else {
+      const userList = [];
+      list.forEach(user => {
+        const userData = {
+          _id: user._id,
+          created: user.created,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          login: user.login,
+          email: user.email,
+          isAdmin: user.isAdmin
+        };
+
+        userList.push(userData);
+      });
+
+      res.json({
+        success: true,
+        message: 'Sending user data',
+        userList
       });
     }
   } catch (error) {
